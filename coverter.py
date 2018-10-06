@@ -8,7 +8,7 @@ class Converter:
     def convertManget(self, magnet):
         sess = lt.session()
         prms = {
-            'save_path': os.path.abspath(os.path.curdir),
+            'save_path': './',
             'paused': False,
             'auto_managed': False,
             'upload_mode': True
@@ -28,5 +28,5 @@ class Converter:
         f.write(lt.bencode(lt.create_torrent(tinf).generate()))
         f.close()
         sess.remove_torrent(torr)
-
         return fname
+

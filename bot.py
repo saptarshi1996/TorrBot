@@ -20,7 +20,7 @@ class TorrBot:
             output.pop(0)
         
             magnets = []
-            for i in range(5):
+            for i in range(len(output)):
                 x = (output[i].find_all('td'))
                 title = x[1].div.a.getText()
                 magnet = (x[1].find_all('a', href=True))[1]
@@ -30,5 +30,6 @@ class TorrBot:
                 })
             return magnets
         except Exception:
+            print(Exception)
             return None
 
