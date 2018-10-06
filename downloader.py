@@ -13,6 +13,6 @@ class Downloader:
 
         while (not h.is_seed()):
             s = h.status()
-            print("Downloading = {0}%".format(s.progress*10000))
+            print("Downloading = {0}%".format(int(s.progress*100)))
             time.sleep(1)
         print (h.name(), 'complete')
