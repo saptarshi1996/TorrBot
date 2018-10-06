@@ -1,35 +1,5 @@
 from bot import TorrBot
-import libtorrent as lt
-import os
-import sys
-import time
-
-
-def convertManget(magnet):
-    sess = lt.session()
-    prms = {
-        'save_path': os.path.abspath(os.path.curdir),
-        'paused': False,
-        'auto_managed': False,
-        'upload_mode': True
-    }
-    torr = lt.add_magnet_uri(sess, magnet, prms)
-    dots = 0
-    while not torr.has_metadata():
-        dots += 1
-        sys.stdout.write('.')
-        sys.stdout.flush()
-        time.sleep(1)
-    if (dots): sys.stdout.write('\n')
-    sess.pause()
-    tinf = torr.get_torrent_info()
-    fname = tinf.name() + '.torrent'
-    f = open(fname, 'wb')
-    f.write(lt.bencode(lt.create_torrent(tinf).generate()))
-    f.close()
-    sess.remove_torrent(torr)
-
-    return fname
+from coverter import Converter
 
 
 def main():
@@ -48,7 +18,12 @@ def main():
         if willDownload == 'y':
             magnetNumber = int(input("Choose which one to be downloaded -\n"))
             magnetLink = magnets[magnetNumber-1]['magnet']
-            filename = convertMagnet(magnetLink)
+
+            converter = Converter()
+            filename = converter.convertManget(magnetLink)
+
+            print("{0} has been downloaded in your current directory".format(filename))
+
         else:
             anotherMovie = input("Would you like to download another movie - \n")
             if anotherMovie == 'y':
