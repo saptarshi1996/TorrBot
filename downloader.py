@@ -21,4 +21,5 @@ class Downloader:
             s = h.status()
             print("Downloading = {0}%".format((s.progress*100)))
             time.sleep(1)
+            sys.stdout.flush()
         print (h.name(), 'complete')
