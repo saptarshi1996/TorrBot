@@ -12,7 +12,7 @@ def main():
     magnets = bot.getMagnets()
     
     if magnets is not None:
-        print("Top 5 searches: ")
+        print("\nHere are the top searches: \n")
         for i in range(len(magnets)):
             print("{0}. {1}".format(i+1, magnets[i]['title']))
 
