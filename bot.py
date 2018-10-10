@@ -1,6 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import lxml
+import sys
 
 
 class TorrBot:
@@ -9,6 +10,7 @@ class TorrBot:
     
     def getUrl(self, name):
         self.url = self.url.format(name.replace(" ", "%20"))
+        print(self.url)
 
     def query(self):
         website = requests.get(self.url)

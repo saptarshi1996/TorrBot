@@ -4,6 +4,7 @@ from downloader import Downloader
 import sys
 import os
 
+
 def main():
     bot = TorrBot()
     name = input("Enter a movie name -\n")
