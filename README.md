@@ -1,4 +1,4 @@
 # torrbot
 
 
-TorrBot - Torrent Client
+TorrBot - A terminal based torrent client.
