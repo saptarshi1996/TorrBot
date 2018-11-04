@@ -3,10 +3,9 @@ from bs4 import BeautifulSoup
 import lxml
 import sys
 
-
 class TorrBot:
     def __init__(self):
-        self.url = "https://pirateproxy.gdn/search/{0}/0/99/0"
+        self.url = "https://proxyonetpb.pet/s/?q={0}&page=0&orderby=99"
     
     def getUrl(self, name):
         self.url = self.url.format(name.replace(" ", "%20"))
