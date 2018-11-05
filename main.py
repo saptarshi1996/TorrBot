@@ -4,7 +4,6 @@ from downloader import Downloader
 import sys
 import os
 
-
 def main():
     bot = TorrBot()
     name = input("Enter a movie name -\n")
@@ -22,6 +21,8 @@ def main():
         if willDownload == 1:
             magnetNumber = int(input("\n\nChoose which one to be downloaded -\n\n"))
             magnetLink = magnets[magnetNumber-1]['magnet']
+
+            print(magnetLink)
 
             converter = Converter()
             filename = converter.convertManget(magnetLink)

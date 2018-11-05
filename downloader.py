@@ -4,7 +4,6 @@ import sys
 import getpass
 import os
 
-
 class Downloader:
     def downloadByName(self, name):
         ses = lt.session()

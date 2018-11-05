@@ -5,7 +5,7 @@ import sys
 
 class TorrBot:
     def __init__(self):
-        self.url = "https://proxyonetpb.pet/s/?q={0}&page=0&orderby=99"
+        self.url = "https://thepiratebay.org/search/{0}/0/99/0"
     
     def getUrl(self, name):
         self.url = self.url.format(name.replace(" ", "%20"))
@@ -33,4 +33,3 @@ class TorrBot:
         except Exception:
             print(Exception)
             return None
-

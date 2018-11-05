@@ -3,18 +3,20 @@ import os
 import sys
 import time
 
-
 class Converter:
     def convertManget(self, magnet):
         sess = lt.session()
+        sess.listen_on(6881, 6891)
         prms = {
-            'save_path': './',
+            'save_path': '/',
             'paused': False,
             'auto_managed': False,
             'upload_mode': True
         }
         torr = lt.add_magnet_uri(sess, magnet, prms)
         dots = 0
+
+        sess.start_dht()
         while not torr.has_metadata():
             dots += 1
             sys.stdout.write('.')
@@ -29,4 +31,3 @@ class Converter:
         f.close()
         sess.remove_torrent(torr)
         return fname
-
