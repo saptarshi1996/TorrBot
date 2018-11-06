@@ -1,8 +1,8 @@
-import libtorrent as lt
-import time
-import sys
-import getpass
-import os
+try:
+    import libtorrent as lt
+except Exception as e:
+    raise e
+import time, sys, getpass, os
 
 class Downloader:
     def downloadByName(self, name):

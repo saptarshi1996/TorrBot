@@ -1,7 +1,8 @@
-import libtorrent as lt
-import os
-import sys
-import time
+try:
+    import libtorrent as lt
+except Exception as e:
+    raise e
+import os, sys, time
 
 class Converter:
     def convertManget(self, magnet):

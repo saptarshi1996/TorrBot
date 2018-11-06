@@ -6,7 +6,7 @@ import sys
 class TorrBot:
     def __init__(self):
         self.url = "https://thepiratebay.org/search/{0}/0/99/0"
-    
+
     def getUrl(self, name):
         self.url = self.url.format(name.replace(" ", "%20"))
         print(self.url)
@@ -19,7 +19,7 @@ class TorrBot:
         try:
             output = self.Soup.find_all("tr")
             output.pop(0)
-        
+
             magnets = []
             for i in range(len(output)):
                 x = (output[i].find_all('td'))
