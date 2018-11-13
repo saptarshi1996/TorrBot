@@ -16,7 +16,6 @@ class Converter:
         }
         torr = lt.add_magnet_uri(sess, magnet, prms)
         dots = 0
-
         sess.start_dht()
         while not torr.has_metadata():
             dots += 1
