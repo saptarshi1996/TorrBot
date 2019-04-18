@@ -1,8 +1,11 @@
+import os
+
 try:
     import libtorrent as lt
 except Exception as e:
-    raise e
-import time, sys, getpass, os
+    os.system("sudo apt install python3-libtorrent")
+
+import time, sys, getpass
 
 class Downloader:
     def downloadByName(self, name):

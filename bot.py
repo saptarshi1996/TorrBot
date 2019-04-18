@@ -1,5 +1,14 @@
-from bs4 import BeautifulSoup
-import requests, lxml, sys
+import os
+
+try:
+    from bs4 import BeautifulSoup
+except Exception as e:
+    os.system("sudo apt install python3-bs4")
+
+try:
+    import requests
+except Exception as e:
+    os.system("sudo pip3 install requests")
 
 class TorrBot:
     def __init__(self):

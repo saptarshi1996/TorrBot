@@ -1,8 +1,11 @@
+import os
+
 try:
     import libtorrent as lt
 except Exception as e:
-    raise e
-import os, sys, time
+    os.system("sudo apt install python3-libtorrent")
+    
+import sys, time
 
 class Converter:
     def convertManget(self, magnet):
